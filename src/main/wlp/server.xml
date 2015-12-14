@@ -10,6 +10,6 @@
         <tcpOptions soReuseAddr="true"/>
     </httpEndpoint>
 
-    <application name="JavaHelloWorldApp" context-root="/JavaHelloWorldApp" location="${appLocation}" type="war"/>
+    <application name="MultiLangBlog" context-root="/MultiLangBlog" location="${appLocation}" type="war"/>
 
 </server>
