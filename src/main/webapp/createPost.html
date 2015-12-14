@@ -4,10 +4,34 @@
     <title>Multi language blog</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="style.css" />
+
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
+
+<script>
+    function create(){
+        var title = $('#title').val();
+        var body = $('#body').val();
+
+        $.post( "/CreatePostServlet", { title: title, body: body })
+          .done(function( data ) {
+            alert( "Post Created");
+          });
+    }
+</script>
 <body>
 
+    <div>
+        <label for="title">Title</label>
+        <input id="title" name="title" />
+    </div>
 
+    <div>
+        <label for="body">Body</label>
+        <textarea id="body" name="body"></textarea>
+    </div>
+
+    <button onclick="create()">Create Post</button>
 
 
 </body>

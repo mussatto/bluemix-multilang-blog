@@ -4,8 +4,26 @@
 	<title>Multi language blog</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" href="style.css" />
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
+
+<script>
+    function loadPosts(){
+
+        $.get( "/GetPostsServlet")
+          .done(function( data ) {
+
+            alert(data);
+          });
+    }
+</script>
+
 <body>
+
+<div id="container">
+
+</div>
+
 
 
 </body>

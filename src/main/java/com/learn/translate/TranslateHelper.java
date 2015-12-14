@@ -44,13 +44,13 @@ public class TranslateHelper {
             Set<Entry<String, JsonElement>> entries = obj.entrySet();
             // Look for the VCAP key that holds the cloudant no sql db information
             for (Entry<String, JsonElement> eachEntry : entries) {
-                if (eachEntry.getKey().equals("cloudantNoSQLDB")) {
+                if (eachEntry.getKey().equals("language_translation")) {
                     dbEntry = eachEntry;
                     break;
                 }
             }
             if (dbEntry == null) {
-                throw new RuntimeException("Could not find cloudantNoSQLDB key in VCAP_SERVICES env variable");
+                throw new RuntimeException("Could not find language_translation key in VCAP_SERVICES env variable");
             }
 
             obj = (JsonObject) ((JsonArray) dbEntry.getValue()).get(0);
