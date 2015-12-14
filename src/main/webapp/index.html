@@ -10,12 +10,21 @@
 <script>
     function loadPosts(){
 
-        $.get( "/GetPostsServlet")
-          .done(function( data ) {
+        $.getJSON( "/GetPostsServlet", function( data ) {
 
-            alert(data);
-          });
+			for(var i=0; i < data.length; i++){
+				var title = data[i].title;
+				var body = data[i].body;
+
+				$( "#container" ).append( "<h1>"+title+"</h1>" );
+				$( "#container" ).append( "<p>"+body+"</p>" );
+			}
+		});
     }
+
+    $( document ).ready(function() {
+	  loadPosts();
+	});
 </script>
 
 <body>
